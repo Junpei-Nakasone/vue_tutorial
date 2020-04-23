@@ -9,9 +9,8 @@
 </head>
 <body>
     <div id="app">
-        <p>{{ message }}</p>
-        <p>{{ number + 3}}</p>
-        <button v-on:click="reverseMessage">reverse message</button>
+        <p>{{ counter }}</p>
+        <button @click="counter += 1">add +1</button>
     </div>
     
 </body>
@@ -20,8 +19,7 @@
 new Vue({
     el: '#app',
     data: {
-        message: 'HelloWorld!',
-        number: 3
+        counter: 0,
     },
     methods: {
         reverseMessage: function() {
