@@ -11,6 +11,7 @@
     <div id="app">
         <p>{{ counter }}</p>
         <button @click="counter += 1">add +1</button>
+        <p>{{ lessThanThree }}</p>
     </div>
     
 </body>
@@ -21,9 +22,17 @@ new Vue({
     data: {
         counter: 0,
     },
-    methods: {
-        reverseMessage: function() {
-            return this.message = this.message.split('').reverse().join('')
+    computed: {
+        lessThanThree: function() {
+            return this.counter > 3 ? 'more than 3' : 'less than 3';
+        }
+    },
+    watch: {
+        counter: function() {
+            var vm = this;
+            setTimeout(function(){
+                vm.counter = 0
+            }, 3000)
         }
     }
 })
