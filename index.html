@@ -7,7 +7,10 @@
 <body>
   <div id="app">
       <ul>
-        <li v-for="fruit in fruits">{{ fruit}}</li>
+        <li v-for="(fruit, index) in fruits">{{index}}-{{ fruit}}</li>
+      </ul>
+      <ul>
+          <template><li v-for="value in object">{{value }}</li></template>
       </ul>
 </div>  
 </body>
@@ -16,7 +19,12 @@
 new Vue({
     el: '#app',
     data: {
-       fruits: ['apple', 'banana', 'grape']
+       fruits: ['apple', 'banana', 'grape'],
+       object: {
+           firstName: 'taro',
+           lastName: 'tanaka',
+           age: 40
+       }
     }
 })
 </script>
