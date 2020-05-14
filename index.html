@@ -6,25 +6,28 @@
 </head>
 <body>
   <div id="app">
-      <ul>
-        <li v-for="(fruit, index) in fruits">{{index}}-{{ fruit}}</li>
-      </ul>
-      <ul>
-          <template><li v-for="value in object">{{value }}</li></template>
-      </ul>
+      <my-component></my-component>
+      <my-component></my-component>
 </div>  
 </body>
 </html>
 <script>
+Vue.component('my-component', {
+    data: function() {
+        return {
+            number: 12
+        }
+    },
+    template: '<p>like({{number}})<button @click="increment">+1</button></p>',
+    methods: {
+        increment: function() {
+            this.number += 1;
+        }
+    }
+})
+
 new Vue({
     el: '#app',
-    data: {
-       fruits: ['apple', 'banana', 'grape'],
-       object: {
-           firstName: 'taro',
-           lastName: 'tanaka',
-           age: 40
-       }
-    }
+    
 })
 </script>
