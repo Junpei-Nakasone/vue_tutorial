@@ -1,6 +1,6 @@
 <template>
 <div>
-<p>Like({{ number }})</p>
+<p>Like({{ number / 2 }})</p>
 <button @click="increment">+1</button>
 </div>
     
@@ -8,11 +8,7 @@
 
 <script>
 export default {
-    data() {
-        return {
-            number: 5
-        };
-    },
+    props: ["number"],
     methods: {
         increment() {
             this.number += 1;
