@@ -2,7 +2,7 @@
 <div>
 <LikeHeader></LikeHeader>
 <h2>App.vue {{ number }}</h2>
-<LikeNumber number="6"></LikeNumber>
+<LikeNumber :number="number"></LikeNumber>
 </div>
 
 </template>
