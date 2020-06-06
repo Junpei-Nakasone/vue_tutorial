@@ -8,7 +8,16 @@
 
 <script>
 export default {
-    props: ["number"],
+    props: {
+        totalNumber: {
+            type: Number,
+            default: function() {
+                return {
+                    number: 5
+                }
+            }
+        }
+    },
     computed: {
         halfNumber() {
             return this.number * 2;
