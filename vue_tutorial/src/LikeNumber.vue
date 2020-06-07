@@ -11,11 +11,10 @@ export default {
     props: {
         totalNumber: {
             type: Number,
-            default: function() {
-                return {
-                    number: 5
-                }
-            }
+            default: 10
+        },
+        testProps: {
+            type: String
         }
     },
     computed: {
